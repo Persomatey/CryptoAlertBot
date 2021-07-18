@@ -11,6 +11,7 @@ global.globalClient = client;
 client.botConfig = Config; 
 client.botConfig.rootDir = __dirname; 
 BotLib.loadHandlers(client, 'commands');
+const keep_alive = require('./keep_alive.js')
 
 global.alertList = []; 
 
