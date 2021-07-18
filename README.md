@@ -1,8 +1,8 @@
-# Music-Chan
+# Crypto Alert Bot
  
-<i>A Discord bot that plays audio from a specified livestream on runtime</i>
+<i>A Discord bot that checks crypto values and alerts the user if a crypto has reached a specific value</i>
 
-<img src="https://raw.githubusercontent.com/Persomatey/MusicBot/master/LoFiGirl.png?token=AFRVWK7IVN2U7LXLBY5TFYDA6AHK4" data-canonical-src="https://raw.githubusercontent.com/Persomatey/MusicBot/master/LoFiGirl.png?token=AFRVWK7IVN2U7LXLBY5TFYDA6AHK4" width="340" height="400" />
+<img src="https://raw.githubusercontent.com/Persomatey/MusicBot/master/LoFiGirl.png?token=AFRVWK7IVN2U7LXLBY5TFYDA6AHK4" data-canonical-src="https://raw.githubusercontent.com/Persomatey/MusicBot/master/LoFiGirl.png?token=AFRVWK7IVN2U7LXLBY5TFYDA6AHK4" width="340" height="340" />
 
 <details>
 <summary>Instructions</summary>
