@@ -8,7 +8,7 @@
 <summary>Instructions</summary>
 <blockquote>
 
-1. [![Run on Repl.it](https://repl.it/badge/github/Persomatey/MusicBot)](https://repl.it/github/Persomatey/MusicBot) (or IDE of your choice) 
+1. [![Run on Repl.it](https://repl.it/badge/github/Persomatey/CryptoAlertBot)](https://repl.it/github/Persomatey/CryptoAlertBot) (or IDE of your choice) 
 2. Before running the code, enter the following commands into the console: 
 	- `npm i discord.js` to install Discord.js framework 
 3. In config.json do the following: 
