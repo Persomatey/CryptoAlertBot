@@ -9,14 +9,12 @@
 <blockquote>
 
 1. [![Run on Repl.it](https://repl.it/badge/github/Persomatey/CryptoAlertBot)](https://repl.it/github/Persomatey/CryptoAlertBot) (or IDE of your choice) 
-2. Before running the code, enter the following commands into the console: 
-	- `npm i discord.js` to install Discord.js framework 
-3. In config.json do the following: 
+2. In config.json do the following: 
 	- Type the character you want to be the prefix of every command in the `prefix`
 	- Paste the bot's token into the quotation marks of the `token` variable 
-4. Run the replit app (or run app in IDE of choice) 
+3. Run the replit app (or run app in IDE of choice) 
 	- (Optional) For 24/7 pinging at 5 minut intervals, check out [UptimeRobot](https://uptimerobot.com/) 
-5. Set some alerts! 
+4. Set some alerts! 
 
 </blockquote>
 </details>
@@ -25,7 +23,7 @@
 <summary>Credits</summary>
 <blockquote>
  
-- Programmed by [Hunter Goodin](https://huntergoodin.com/)  
+- Programmed by [Hunter Goodin](https://huntergoodin.com/) 
 
 </blockquote>
 </details>
