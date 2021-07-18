@@ -1,0 +1,19 @@
+{
+  "name": "simple-discord-js-bot",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Morgan Breden @bredmor",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "crypto-price": "0.0.6",
+    "discord.js": "^12.5.3",
+    "node-binance-api": "^0.12.5",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.0"
+  }
+}
