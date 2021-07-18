@@ -44,6 +44,21 @@
 <blockquote>
 
 <details>
+<summary>CL-000001</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Fixed how the !help command displays the !setalert command as !alert 
+		- It used to be just !alert but I changed it to !setalert and forgot to change this 
+	- Added .replit file 
+	- Added keep_alive.js reference in index 
+	- Added logo for this bot including .psd file in case people want to mess around with it 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
+
+<details>
 <summary>CL-000000</summary>
 <blockquote>
 

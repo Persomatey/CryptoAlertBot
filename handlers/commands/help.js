@@ -12,7 +12,7 @@ module.exports = {
 			.setColor("BLACK")
 			.setTitle("Command List")
 			.setDescription(
-				"`!alert`: Set an alert for a given crypto that private messages you if alert occurs. \n" + 
+				"`!setalert`: Set an alert for a given crypto that private messages you if alert occurs. \n" + 
 				"`!check`: Checks a given crypto's value against a target currency. \n" + 
 				"`!allalerts`: Displays all alerts currently running. \n" + 
 				"`!deletealert`: Deletes an alert given a number (`!allalerts` for number). \n" + 
@@ -20,8 +20,8 @@ module.exports = {
 				"Arguments for `!alert` should be `cryptoName` `operator` `amount` `target`. \n" + 
 				"Arguments for `!check` should be `cryptoName` `target`. \n" + 
 				"Argument for `!deletealert` should be a number. \n" + 
-				"Ex. `!alert BTC below 1 USD` sets an alert for if BTC falls below $1. \n" + 
-				"Ex. `!alert DOGE above 1 EUR` sets an alert for if DOGE rises above €1. \n" + 
+				"Ex. `!setalert BTC below 1 USD` sets an alert for if BTC falls below $1. \n" + 
+				"Ex. `!setalert DOGE above 1 EUR` sets an alert for if DOGE rises above €1. \n" + 
 				"Ex. `!check ETH USD` checks ETH's value compared to USD. \n" +
 				"Ex. `!check LTC BTC` checks LTC's value compared to BTC. \n" +
 				"Ex. `!deletealert 4` deletes Alert4. \n"
