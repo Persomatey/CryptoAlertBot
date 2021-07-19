@@ -52,7 +52,7 @@ module.exports =
 			{
 				if(json.success == true)
 				{
-					mes = "Set a new alert for when " + ticker + " goes " + operator + " $" + amount + " " + target; 
+					mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
 				}
 				else
 				{

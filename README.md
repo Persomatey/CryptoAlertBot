@@ -44,6 +44,18 @@
 <blockquote>
 
 <details>
+<summary>CL-000002</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Fixed bug in !setalert command where it displays $ next to amount 
+		- That doesn't make sense if we're talking about a non-dollar like BTC for example 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
+
+<details>
 <summary>CL-000001</summary>
 <blockquote>
 
