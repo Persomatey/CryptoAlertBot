@@ -13,7 +13,7 @@
 	- Type the character you want to be the prefix of every command in the `prefix`
 	- Paste the bot's token into the quotation marks of the `token` variable 
 3. Run the replit app (or run app in IDE of choice) 
-	- (Optional) For 24/7 pinging at 5 minut intervals, check out [UptimeRobot](https://uptimerobot.com/) 
+	- (Optional) For 24/7 pinging at 5 minute intervals, check out [UptimeRobot](https://uptimerobot.com/) 
 4. Set some alerts! 
 
 </blockquote>
