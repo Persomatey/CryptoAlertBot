@@ -1,30 +1,25 @@
-/*
- * How to use !alert 'cryptoName' 'above/below' 'amount' 'target'
- * Example: '!alert ethereum above 2000' sets an alert for Ethereum when it goes above $2000 USD 
- */
-
 module.exports = 
 {
     name: 'setalert', 
-    description: 'Adds a crypto to check', 
     args: false, 
-    usage: '', 
+	aliases: ['addalert', 'newalert'],
 
     execute(message, args) 
 	{
+		const fs = require('fs');
 		const fetch = require("node-fetch");
 		let mes = "TEMP"; 
-
-		var ticker = args[0].toUpperCase(); 
-		var operator = args[1]; 
-		var amount = parseFloat(args[2]); 
-		var target = args[3].toUpperCase(); 
 
 		/* Make sure that arguments are set up correctly */
 		if(args.length < 4 || args.length > 4)
 		{
 			return message.channel.send("ERROR: Invalid use of command. Use command `!help` for full instructions on how to use this command."); 
 		}
+
+		var ticker = args[0].toUpperCase(); 
+		var operator = args[1]; 
+		var amount = parseFloat(args[2]); 
+		var target = args[3].toUpperCase(); 
 
 		/* Make sure that operation is valid */
 		if (operator == "above" || operator == "below")	// if operator isn't 'above' or 'below' 
@@ -52,7 +47,7 @@ module.exports =
 			{
 				if(json.success == true)
 				{
-					mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
+					//mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
 				}
 				else
 				{
@@ -62,6 +57,31 @@ module.exports =
 				const newAlert = {name:"Alert"+alertList.length, user:message.author.id, ticker:ticker, operator:operator, amount:amount, target:target}; 
 				alertList.push(newAlert); 
 
+				// write to data.txt 
+
+				var newData = "";  
+
+				for(var i = 0; i < alertList.length; i++)
+				{
+					if(alertList[i] != null)
+					{
+						if(i != alertList.length - 1)
+						{
+							newData += (alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target) + "\n"; 
+						}
+						else
+						{
+							newData += (alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target) + ""; 
+						}
+					}
+				}
+
+				fs.writeFile('data.txt', newData, (err) => 
+				{
+					if (err) throw err;
+				}); 
+
+				mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
 				return message.channel.send(mes); 
 			});
     },

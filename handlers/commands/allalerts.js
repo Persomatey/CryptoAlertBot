@@ -1,8 +1,8 @@
-module.exports = {
-    name: 'allalerts', // The name of the command
-    description: '', // The description of the command (for help text)
-    args: false, // Specified that this command doesn't need any data other than the command
-    usage: '', // Help text to explain how to use the command (if it had any arguments)
+module.exports = 
+{
+    name: 'allalerts',  
+    args: false, 
+	aliases: ['displayalerts', 'showalerts', 'readalerts'],
 
     execute(message, args) 
 	{
@@ -14,11 +14,12 @@ module.exports = {
 			{
 				if(alertList[i] != null)
 				{
-					mes += "`" + alertList[i].name + "`: When " + alertList[i].ticker + " goes " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + " (" + globalClient.users.cache.find(user => user.id === alertList[i].user).username + ")\n"; 
+					var myUser; 
+
+					mes += "`" + alertList[i].name + "`: When " + alertList[i].ticker + " goes " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + "\n"; 
+					
 				}
 			}
-
-			//return message.channel.send(mes); 
 		}
 		else 
 		{

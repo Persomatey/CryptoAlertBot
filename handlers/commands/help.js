@@ -10,13 +10,16 @@ module.exports = {
 
         let embed = new MessageEmbed() 
 			.setColor("BLACK")
-			.setTitle("Command List")
+			//.setTitle("Help")
 			.setDescription(
+				"**List of commands** \n" + 
 				"`!setalert`: Set an alert for a given crypto that private messages you if alert occurs. \n" + 
 				"`!check`: Checks a given crypto's value against a target currency. \n" + 
 				"`!allalerts`: Displays all alerts currently running. \n" + 
 				"`!deletealert`: Deletes an alert given a number (`!allalerts` for number). \n" + 
+				"`!clearalerts`: Deletes all alerts. \n" + 
 				"`!help`: Displays a list of all commands as well as usage. \n \n" + 
+				"**Usage** \n" + 
 				"Arguments for `!alert` should be `cryptoName` `operator` `amount` `target`. \n" + 
 				"Arguments for `!check` should be `cryptoName` `target`. \n" + 
 				"Argument for `!deletealert` should be a number. \n" + 
@@ -27,7 +30,6 @@ module.exports = {
 				"Ex. `!deletealert 4` deletes Alert4. \n"
 			)
 			.setFooter("All pricing is set according to Cryptonator's calculator (https://www.cryptonator.com/)"); 
-			// [https://www.cryptonator.com/](https://www.cryptonator.com/)
 
 		return message.channel.send(embed); 
     },

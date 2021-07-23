@@ -1,9 +1,8 @@
 module.exports = 
 {
     name: 'check', 
-    description: 'Adds a crypto to check', 
     args: false, 
-    usage: '', 
+	aliases: ['compare'],
 
     execute(message, args) 
 	{
@@ -11,8 +10,8 @@ module.exports =
 		let mes = "TEMP"; 
 		let error = 'ERROR: Invalid use of command. Use command `!help` for full instructions on how to use this command.'; 
 
-		var ticker = args[0]; 
-		var target = args[1]; 
+		var ticker = args[0].toUpperCase(); ; 
+		var target = args[1].toUpperCase(); ; 
 
 		/* Make sure that arguments are set up correctly */
 		if(args.length < 2 || args.length > 2)

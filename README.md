@@ -44,6 +44,22 @@
 <blockquote>
 
 <details>
+<summary>CL-000003</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Fixed bug where it wouldn't delete the alert if it used the "below" operator 
+	- Removed title from !help message 
+	- Added bold 'headers' on top of the list of commands and the usage in !help message 
+	- Rewrote the system to where it now stores the alert data in a .txt document instead of just in memory 
+	- Made it to where it now checks every 3 seconds. 
+		- However, alerts that are deleted automatically take up to 3 seconds to actually delete 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
+
+<details>
 <summary>CL-000002</summary>
 <blockquote>
 
