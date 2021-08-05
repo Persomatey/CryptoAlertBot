@@ -2,7 +2,7 @@
  
 <i>A Discord bot that checks an asset's value and alerts the user if an asset has reached a specific value</i>
 
-<img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogoBot.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogoBot.png" width="340" height="340" />
+<img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogoBot.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogoBot.png" width="340" height="340" />
 
 <details>
 <summary>Instructions</summary>
@@ -15,9 +15,10 @@
 	- Click `CREATE` button 
 	- Copy the Access URL 
 3. In config.json do the following: 
+	- Paste the JSON's Access URL into the quotation marks of the `json` variable
+		- Add `/latest` at the end of the URL 
 	- Type the character you want to be the prefix of every command in the `prefix` variable 
 	- Paste the bot's token into the quotation marks of the `token` variable 
-	- Paste the JSON's Access URL into the quotation marks of the `json` variable 
 	- Navigate go to [https://jsonbin.io/api-keys](https://jsonbin.io/api-keys) and copy the X-Master-Key  
 	- Paste the X-Master-Key into the quotation marks of the `key` variable 
 4. Run the replit app (or run app in IDE of choice) 
@@ -49,12 +50,14 @@
 <blockquote>
 
 - Included .psd file in this repo in case you want to make your own. 
+- Original
+	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogo.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Matrix.png" width="100" height="100"/>
 - Matrix
-	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Matrix.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Matrix.png" width="100" height="100"/>
+	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogo_Matrix.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Matrix.png" width="100" height="100"/>
 - Pride 
-	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Pride.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Pride.png" width="100" height="100"/>
+	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogo_Pride.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Pride.png" width="100" height="100"/>
 - X.A.N.A.   
-	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Xana.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Xana.png" width="100" height="100"/>
+	- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogo_Xana.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/CryptoBotLogo_Xana.png" width="100" height="100"/>
 
 </blockquote>
 </details>
