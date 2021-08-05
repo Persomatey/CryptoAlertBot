@@ -10,10 +10,10 @@ module.exports =
 		const fetch = require("node-fetch");
 		let mes = "TEMP"; 
 
-		/* Make sure that arguments are set up correctly */
+		// Make sure that arguments are set up correctly 
 		if(args.length < 4 || args.length > 4)
 		{
-			return message.channel.send("ERROR: Invalid use of command. Use command `!help` for full instructions on how to use this command."); 
+			return message.channel.send("ERROR: Invalid use of command. Use command `" + client.botConfig.prefix + "help` for full instructions on how to use this command."); 
 		}
 
 		var ticker = args[0].toUpperCase(); 
@@ -21,20 +21,20 @@ module.exports =
 		var amount = parseFloat(args[2]); 
 		var target = args[3].toUpperCase(); 
 
-		/* Make sure that operation is valid */
-		if (operator == "above" || operator == "below")	// if operator isn't 'above' or 'below' 
+		// Make sure that operation is valid 
+		if (operator == "above" || operator == "below") 
 		{
-			// then just continue 
+			// If the argument is fine then just continue 
 		}
 		else
 		{
-			return message.channel.send("ERROR: '" + operator + "' not a valid operator. Use command `!help` for full instructions on how to use this command."); 
+			return message.channel.send("ERROR: '" + operator + "' not a valid operator. Use command `" + client.botConfig.prefix + "help` for full instructions on how to use this command."); 
 		}
 
-		/* Make sure that amount is a float */
+		// Make sure that amount is a float 
 		if(isNaN(parseFloat(amount)))
 		{
-			return message.channel.send("ERROR: '" + args[2] + "' not a valid amount. Use command `!help` for full instructions on how to use this command."); 
+			return message.channel.send("ERROR: '" + args[2] + "' not a valid amount. Use command `" + client.botConfig.prefix + "help` for full instructions on how to use this command."); 
 		}
 
 		cryptoURL = "https://api.cryptonator.com/api/ticker/"; 

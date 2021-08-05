@@ -67,6 +67,26 @@
 <blockquote>
 
 <details>
+<summary>CL-000005</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Fixed references to commands in all mesages to include the config's prefix instead of ! 
+		- allalerts
+		- check 
+		- deletealert
+		- setalert  
+	- Fixed bug where the check command wouldn't message an error if there are no arguments 
+	- Cleaned up code 
+		- Got rid of unused variables 
+		- Cleaned up some comments 
+		- Etc 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
+
+<details>
 <summary>CL-000004</summary>
 <blockquote>
 

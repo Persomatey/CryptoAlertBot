@@ -14,22 +14,19 @@ module.exports =
 			{
 				if(alertList[i] != null)
 				{
-					var myUser; 
-
 					mes += "`" + alertList[i].name + "`: When " + alertList[i].ticker + " goes " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + "\n"; 
-					
 				}
 			}
 		}
 		else 
 		{
-			mes = "There are no alerts currently set. To set an alert, you can use the `!alert` command. "; 
+			mes = "There are no alerts currently set. To set an alert, you can use the `" + client.botConfig.prefix + "alert` command. "; 
 			return message.channel.send(mes); 
 		}
 
 		if (mes == "")
 		{
-			mes = "There are no alerts currently set. To set an alert, you can use the `!alert` command. "; 
+			mes = "There are no alerts currently set. To set an alert, you can use the `" + client.botConfig.prefix + "alert` command. "; 
 			return message.channel.send(mes); 
 		}
 

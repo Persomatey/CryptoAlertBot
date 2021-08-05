@@ -9,7 +9,7 @@ module.exports =
 		const fetch = require("node-fetch");
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		var mes = ""; 
-		var error = 'ERROR: Invalid use of command. Use command `!help` for full instructions on how to use this command.'; 
+		var error = 'ERROR: Invalid use of command. Use command `' + client.botConfig.prefix + 'help` for full instructions on how to use this command.'; 
 		var element; 
 		if(args.length < 1 || args.length > 1)
 		{
