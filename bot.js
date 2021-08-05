@@ -1,8 +1,10 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 
-module.exports = {
-    loadHandlers(client, subdir) {
+module.exports = 
+{
+    loadHandlers(client, subdir) 
+	{
         // Gather a list of all of our individual handler functions
         const files = fs.readdirSync(`${client.botConfig.rootDir}/handlers/${subdir}`).filter(file => file.endsWith('.js'));
 

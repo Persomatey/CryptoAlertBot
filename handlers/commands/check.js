@@ -2,7 +2,7 @@ module.exports =
 {
     name: 'check', 
     args: false, 
-	aliases: ['compare'],
+	aliases: ['compare', 'value'],
 
     execute(message, args) 
 	{
@@ -13,7 +13,7 @@ module.exports =
 		var ticker = args[0].toUpperCase(); ; 
 		var target = args[1].toUpperCase(); ; 
 
-		/* Make sure that arguments are set up correctly */
+		// Make sure that arguments are set up correctly 
 		if(args.length < 2 || args.length > 2)
 		{
 			return message.channel.send(error); 

@@ -6,7 +6,7 @@ module.exports =
 
     execute(message, args) 
 	{
-		const fs = require('fs');
+		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		const fetch = require("node-fetch");
 		let mes = "TEMP"; 
 
@@ -24,7 +24,7 @@ module.exports =
 		/* Make sure that operation is valid */
 		if (operator == "above" || operator == "below")	// if operator isn't 'above' or 'below' 
 		{
-			// This is only set up like this because apparently Javascript doesn't work correctly with NOT operators 
+			// then just continue 
 		}
 		else
 		{
@@ -34,53 +34,62 @@ module.exports =
 		/* Make sure that amount is a float */
 		if(isNaN(parseFloat(amount)))
 		{
-			return message.channel.send("ERROR: '" + args[2] + "' not a valid amount in USD. Use command `!help` for full instructions on how to use this command."); 
+			return message.channel.send("ERROR: '" + args[2] + "' not a valid amount. Use command `!help` for full instructions on how to use this command."); 
 		}
 
 		cryptoURL = "https://api.cryptonator.com/api/ticker/"; 
 		cryptoURL += ("" + ticker + "-" + target);  
 
+		// Make sure that the ticker given is a valid ticker on cryptonator 
 		let settings = { method: "Get" };
 		fetch(cryptoURL, settings)
 			.then(res => res.json())
 			.then((json) => 
 			{
-				if(json.success == true)
-				{
-					//mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
-				}
-				else
+				if(json.success == false)
 				{
 					mes = "ERROR: " + json.error; 
 					return message.channel.send(mes); 
 				}
+
 				const newAlert = {name:"Alert"+alertList.length, user:message.author.id, ticker:ticker, operator:operator, amount:amount, target:target}; 
 				alertList.push(newAlert); 
 
-				// write to data.txt 
-
-				var newData = "";  
-
+				// write to the json file 
+				let newJSON = '{"alerts":['; 
 				for(var i = 0; i < alertList.length; i++)
 				{
-					if(alertList[i] != null)
+					newJSON += '{"name":"' + alertList[i].name + '","user":"' + alertList[i].user + '","ticker":"' + alertList[i].ticker + '","operator":"' + alertList[i].operator + '","amount":"' + alertList[i].amount + '","target":"' + alertList[i].target + '"}'; 
+					if(i != alertList.length - 1)
 					{
-						if(i != alertList.length - 1)
-						{
-							newData += (alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target) + "\n"; 
-						}
-						else
-						{
-							newData += (alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target) + ""; 
-						}
+						newJSON += ","
 					}
 				}
+				newJSON += "]}"
 
-				fs.writeFile('data.txt', newData, (err) => 
+				console.log("Setting new JSON info..."); 
+
+				let req = new XMLHttpRequest();
+
+				req.onreadystatechange = () => 
 				{
-					if (err) throw err;
-				}); 
+					if (req.readyState == XMLHttpRequest.DONE) 
+					{
+						console.log(req.responseText); 
+					}
+				};
 
+				let jsonURL = client.botConfig.json; 
+				jsonURL = jsonURL.substring(0, jsonURL.length - 7);
+
+				req.open("PUT", jsonURL, true);
+				req.setRequestHeader("Content-Type", "application/json");
+				req.setRequestHeader("X-Master-Key", client.botConfig.key);
+				req.send(newJSON);
+
+				console.log("...new JSON info set! "); 
+
+				// Let the user know it is done 
 				mes = "Set a new alert for when " + ticker + " goes " + operator + " " + amount + " " + target; 
 				return message.channel.send(mes); 
 			});

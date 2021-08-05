@@ -1,12 +1,13 @@
-module.exports = {
+module.exports = 
+{
     name: 'deletealert', 
     args: false, 
 	aliases: ['clearalert', 'erasealert', 'removealert'],
 
     execute(message, args) 
 	{
-		const fs = require('fs'); 
-
+		const fetch = require("node-fetch");
+		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		var mes = ""; 
 		var error = 'ERROR: Invalid use of command. Use command `!help` for full instructions on how to use this command.'; 
 		var element; 
@@ -53,53 +54,69 @@ module.exports = {
 			}
 		}
 
-		var newData = "";  
-
+		// Making new JSON text 
+		let newJSON = '{"alerts":['; 
+		var validCount = 0; 
 		for(var i = 0; i < alertList.length; i++)
 		{
 			if(alertList[i] != null)
 			{
+				newJSON += '{"name":"Alert' + (validCount++) + '","user":"' + alertList[i].user + '","ticker":"' + alertList[i].ticker + '","operator":"' + alertList[i].operator + '","amount":"' + alertList[i].amount + '","target":"' + alertList[i].target + '"}'; 
 				if(i != alertList.length - 1)
 				{
-					let newStr = alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + "\n"
-					newData += newStr; 
-				}
-				else
-				{
-					let newStr = alertList[i].name + " " + alertList[i].user + " " + alertList[i].ticker + " " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + ""
-					newData += newStr; 
+					newJSON += ","
 				}
 			}
 		}
+		newJSON += "]}"
 
-		fs.writeFile('data.txt', newData, (err) => 
+		// Writing to JSON file 
+		let req = new XMLHttpRequest();
+		req.onreadystatechange = () => 
 		{
-			if (err) throw err;
-		}); 
-
-		alertList = []; 
-		
-		let dataArray = newData.toString().split("\n");
-
-		if (newData.toString().length > 0)
-		{
-			for(var i = 0; i < dataArray.length; i++)
+			if (req.readyState == XMLHttpRequest.DONE) 
 			{
-				if(i == dataArray.length)
-				{
-					let newAlertText = dataArray[i].toString().split(" "); 
-					let newAlert = {name:"Alert"+alertList.length, user:newAlertText[1], ticker:newAlertText[2], operator:newAlertText[3], amount:newAlertText[4], target:newAlertText[5].substring(0, newAlertText[5].length - 1)}; 
-					alertList.push(newAlert); 
-				}
-				else
-				{
-					let newAlertText = dataArray[i].toString().split(" "); 
-					let newAlert = {name:"Alert"+alertList.length, user:newAlertText[1], ticker:newAlertText[2], operator:newAlertText[3], amount:newAlertText[4], target:newAlertText[5].substring(0, newAlertText[5].length)}; 
-					alertList.push(newAlert); 
-				}
+				console.log(req.responseText); 
 			}
-		}
+		};
 
-		return message.channel.send(mes); 
+		let jsonURL = client.botConfig.json; 
+		jsonURLShortened = jsonURL.substring(0, jsonURL.length - 7);
+
+		req.open("PUT", jsonURLShortened, true);
+		req.setRequestHeader("Content-Type", "application/json");
+		req.setRequestHeader("X-Master-Key", client.botConfig.key);
+		req.send(newJSON);
+
+		// Emptying alertList
+		alertList = []; 
+
+		// Importing new alerts 
+		setTimeout(function()
+		{ 
+			let settings = { method: "Get" }; 
+			fetch(client.botConfig.json, settings)
+			.then(res => res.json())
+			.then((json) => 
+			{
+				console.log("Importing alerts..."); 
+				for(var i = 0; i < json.alerts.length; i++)
+				{
+					let jsonAlertName = json.alerts[i].name; 
+					let jsonAlertUser = json.alerts[i].user; 
+					let jsonAlertTicker = json.alerts[i].ticker; 
+					let jsonAlertOperator = json.alerts[i].operator; 
+					let jsonAlertAmount = json.alerts[i].amount; 
+					let jsonAlertTarget = json.alerts[i].target; 
+					console.log("...importing Name=" + jsonAlertName + " User=" + jsonAlertUser + " Ticker=" + jsonAlertTicker + " Operator=" + jsonAlertOperator + " Amount=" + jsonAlertAmount + " Target=" + jsonAlertTarget + "..."); 
+					
+					const newAlert = {name:"Alert"+alertList.length, user:jsonAlertUser, ticker:jsonAlertTicker, operator:jsonAlertOperator, amount:jsonAlertAmount, target:jsonAlertTarget}; 
+					alertList.push(newAlert); 
+				}
+				console.log("...import complete!"); 
+
+				return message.channel.send(mes); 
+			});
+		}, 500);
     },
 };
