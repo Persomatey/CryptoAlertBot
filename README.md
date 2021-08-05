@@ -15,9 +15,10 @@
 	- Click `CREATE` button 
 	- Copy the Access URL 
 3. In config.json do the following: 
+	- Paste the JSON's Access URL into the quotation marks of the `json` variable
+		- Add `/latest` at the end of the URL 
 	- Type the character you want to be the prefix of every command in the `prefix` variable 
 	- Paste the bot's token into the quotation marks of the `token` variable 
-	- Paste the JSON's Access URL into the quotation marks of the `json` variable 
 	- Navigate go to [https://jsonbin.io/api-keys](https://jsonbin.io/api-keys) and copy the X-Master-Key  
 	- Paste the X-Master-Key into the quotation marks of the `key` variable 
 4. Run the replit app (or run app in IDE of choice) 
