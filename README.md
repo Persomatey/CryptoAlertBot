@@ -68,6 +68,29 @@
 <details>
 <summary>Change List</summary>
 <blockquote>
+	
+<details>
+<summary>CL-000007</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Made it so that users can not use the `deletealert` command on an alert that they did not set 
+	- Deprecated the `deleteallalerts` command in favor of this new direction 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
+	
+<details>
+<summary>CL-000006</summary>
+<blockquote>
+
+- Made the following changes: 
+	- Made it to where the `allalerts` command will only display alerts from the user who sent that command for anonymity 
+	- Edited the README to reflect the above changes 
+
+</blockquote>
+</details>
 
 <details>
 <summary>CL-000005</summary>
