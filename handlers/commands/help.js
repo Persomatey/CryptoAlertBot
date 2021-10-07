@@ -16,7 +16,6 @@ module.exports =
 				"`" + client.botConfig.prefix + "check`: Checks a given asset's value against a target asset. \n" + 
 				"`" + client.botConfig.prefix + "allalerts`: Displays all alerts currently set. \n" + 
 				"`" + client.botConfig.prefix + "deletealert`: Deletes an alert given a number (`" + client.botConfig.prefix + "allalerts` for number). \n" + 
-				"`" + client.botConfig.prefix + "deleteallalerts`: Deletes all alerts. \n" + 
 				"`" + client.botConfig.prefix + "help`: Displays a list of all commands as well as usage. \n" + 
 				"`" + client.botConfig.prefix + "about`: Displays some miscellaneous info about this bot. \n \n" + 
 				"**Usage** \n" + 
@@ -33,7 +32,6 @@ module.exports =
 				"`" + client.botConfig.prefix + "check` : `" + client.botConfig.prefix + "compare`, `" + client.botConfig.prefix + "value` \n " + 
 				"`" + client.botConfig.prefix + "allalerts` : `" + client.botConfig.prefix + "displayalerts`, `" + client.botConfig.prefix + "showalerts`, `" + client.botConfig.prefix + "readalerts` \n " + 
 				"`" + client.botConfig.prefix + "deletealert` : `" + client.botConfig.prefix + "clearalert`, `" + client.botConfig.prefix + "erasealert`, `" + client.botConfig.prefix + "removealert` \n " +
-				"`" + client.botConfig.prefix + "deleteallalerts` : `" + client.botConfig.prefix + "clearallalerts`, `" + client.botConfig.prefix + "eraseallalerts`, `" + client.botConfig.prefix + "removeallalerts` \n " + 
 				"`" + client.botConfig.prefix + "help` : `" + client.botConfig.prefix + "helpme`, `" + client.botConfig.prefix + "commands`, `" + client.botConfig.prefix + "howto`, `" + client.botConfig.prefix + "tutorial` \n" +
 				"`" + client.botConfig.prefix + "about` : `" + client.botConfig.prefix + "aboutbot`, `" + client.botConfig.prefix + "info` \n" 
 			)

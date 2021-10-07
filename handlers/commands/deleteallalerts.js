@@ -6,6 +6,7 @@ module.exports =
 
 	execute(message, args) 
 	{
+		/*
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 		var newJSON = '{"alerts":[]}';
@@ -30,5 +31,7 @@ module.exports =
 		alertList = []; 
 
 		return message.channel.send('All alerts are cleared! There are now no more alerts.'); 
+		//*/
+		return message.channel.send('This command has been deprecated. You may delete alerts manually using the `' + globalConfig.prefix + "deletealert` command."); 
 	}
 }

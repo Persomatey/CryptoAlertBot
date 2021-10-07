@@ -7,6 +7,7 @@ const keep_alive = require('./keep_alive.js');
 global.client = new Discord.Client(); 
 client.botConfig = Config; 
 client.botConfig.rootDir = __dirname; 
+global.globalConfig = client.botConfig; 
 BotLib.loadHandlers(client, 'commands');
 require('dotenv').config(); 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
