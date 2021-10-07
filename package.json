@@ -1,0 +1,26 @@
+{
+  "name": "CryptoAlertBot",
+  "version": "1.0.0",
+  "description": "<i>A Discord bot that checks an asset's value and alerts the user if an asset has reached a specific value</i>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Persomatey/CryptoAlertBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Persomatey/CryptoAlertBot/issues"
+  },
+  "homepage": "https://github.com/Persomatey/CryptoAlertBot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

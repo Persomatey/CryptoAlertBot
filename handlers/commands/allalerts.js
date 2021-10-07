@@ -12,8 +12,9 @@ module.exports =
 		{
 			for (var i = 0; i < alertList.length; i++)
 			{
-				if(alertList[i] != null)
+				if(alertList[i] != null && alertList[i].user == message.author.id)
 				{
+					console.log("including" + alertList[i].name + " in embed because message's user is " + alertList[i].user + " which is the same as" + alertList[i] + "'s user:" + message.author.id); 
 					mes += "`" + alertList[i].name + "`: When " + alertList[i].ticker + " goes " + alertList[i].operator + " " + alertList[i].amount + " " + alertList[i].target + "\n"; 
 				}
 			}
