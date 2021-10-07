@@ -178,7 +178,7 @@ Your support is completely optional.
 
 However, if you want to buy me a cup of coffee (or a new house), you can do so by sending Bitcoin to this address: 
 - 3BXqPxqXkKxFib4TSQychhuEi6euSspCK2 
-- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/BTCAddressQRCode.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/BTCAddressQRCode.png" width="200" height="200" />
+- <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/BTCAddressQRCode.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/BTCAddressQRCode.png" width="200" height="200" />
 
 </blockquote>
 </details>
