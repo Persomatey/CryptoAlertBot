@@ -5,7 +5,7 @@
 <img src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogoBot.png" data-canonical-src="https://raw.githubusercontent.com/Persomatey/CryptoAlertBot/master/images/CryptoBotLogoBot.png" width="340" height="340" />
 
 <details>
-<summary>Instructions</summary>
+<summary>How To Set Up</summary>
 <blockquote>
 
 1. [![Run on Repl.it](https://repl.it/badge/github/Persomatey/CryptoAlertBot)](https://repl.it/github/Persomatey/CryptoAlertBot) (or IDE of your choice) 
